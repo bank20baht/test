@@ -1,0 +1,25 @@
+
+{% block title%}<title>Login</title>{% endblock %}
+{%  block content %}
+<center>    
+    <container>
+        <h1 style="margin-top: 25px;">Wellcome to Website 3SA04</h1>
+        <form action = "http://localhost:5000/user" method = "post">
+            <div class="card text-bg-light mb-3" style="max-width: 20rem; height: 13rem; margin-top: 90px;">
+                <div class="card-header"><h4>Enter Your Name</h4></div>
+                <div class="card-body">
+                    <p><input type = "text" name = "nm" /></p>
+                    <p><input class="btn btn-outline-primary" type = "submit" value = "submit" /></p>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                <p class="text-danger">{{msg}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}   
+                </div>
+            </div>
+        </form>
+    </container>
+</center>
+{% endblock %}

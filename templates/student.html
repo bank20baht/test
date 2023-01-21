@@ -1,0 +1,28 @@
+<html>
+    <h1 >Wellcome {{user}} </h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <div >
+                        <p class="text-dark">{{msg}}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <center>
+        <body>
+        <form action = "http://localhost:5000/result" method = "POST">
+            <p>StudentID <input type = "text" name = "StudentID" /></p>
+            <p>Fill Grade in box</p>
+            <p>Introcom <input type = "text" name = "Introcom" /></p>
+            <p>MathCom <input type = "text" name = "MathCom" /></p>
+            <p>Data Structure <input type ="text" name = "Data Structure" /></p>
+            <p>Operation system <input type ="text" name = "Operation system" /></p>
+            <p>Database <input type ="text" name = "Database" /></p>
+            <p><input type = "submit" value = "submit" /></p>
+        </form>
+        <a href="{{url_for('logout')}}" type="button" class="btn btn-outline-light" role="button" aria-pressed="true" style = "margin-right: 25px;">Logout</a>
+        </body>
+    </center>
+
+</html>

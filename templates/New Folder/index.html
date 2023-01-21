@@ -1,0 +1,13 @@
+{%  block content %}
+<center>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p class="text-dark">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>Wellcome {{user}}</h1>
+</center>
+<a href="{{url_for('logout')}}" type="button" class="btn btn-outline-light" role="button" aria-pressed="true" style = "margin-right: 25px;">Logout</a>
+{% endblock %}
